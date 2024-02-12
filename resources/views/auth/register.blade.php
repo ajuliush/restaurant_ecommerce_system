@@ -1,10 +1,10 @@
-<title>MidwayCafe</title>
-<link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/short.jpg') }}">
+<title>JuliushCafe</title>
+<link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/short_updated.jpg') }}">
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <!--<x-jet-authentication-card-logo /> -->
-            <img width="100px" src="{{ asset('assets/images/logo.png')}}">
+            <img width="100px" src="{{ asset('assets/images/logo_updated.png')}}">
         </x-slot>
         @if(Session::has('wrong'))
         <br>

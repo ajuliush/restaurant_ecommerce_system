@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/short.jpg') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/short_updated.jpg') }}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <title>Midway Dine - Your Favourite Foods</title>
+    <title>Juliush Dine - Your Favourite Foods</title>
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css')}}">
@@ -48,8 +48,8 @@
         <div class="container">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="{{url('home')}}" class="logo">
-                            <img width="100px" src="{{ asset('assets/images/logo.png')}}">
+                        <a href="{{url('/')}}" class="logo">
+                            <img width="100px" src="{{ asset('assets/images/logo_updated.png')}}">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
@@ -154,22 +154,22 @@
                 <div class="col-lg-4 col-xs-12">
                     <div class="right-text-content">
                             <ul class="social-icons">
-                                <li><a href="https://web.facebook.com/rahathosenmanik/"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="https://twitter.com/rahathosenmanik"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/rahathossenmanik/"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="https://www.instagram.com/rahathossenmanik/?hl=en"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://web.facebook.com//" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in//" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://www.instagram.com//?hl=en" target="_blank"><i class="fa fa-instagram"></i></a></li>
                             </ul>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="logo">
-                        <a href="{{url('home')}}"><img src="{{ asset('assets/images/logo.png')}}" alt=""></a>
+                        <a href="{{url('/')}}"><img src="{{ asset('assets/images/logo_updated.png')}}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xs-12">
                     <div class="left-text-content">
-                        <p>© Copyright Midway Dine
-							<br>Since 2022</p>
+                        <p>© Copyright Juliush Dine
+							<br>Since 2024</p>
                     </div>
                 </div>
             </div>
