@@ -79,7 +79,8 @@
                   
                     
                       <button type="submit" class="btn btn-primary me-2">Submit</button>
-                      <button class="btn btn-dark">Cancel</button>
+                      {{-- <button class="btn btn-dark">Cancel</button> --}}
+                      <a class="btn btn-dark" href="{{ route('/admin-add') }}">Cancel</a>
                     </form>
                   </div>
                 </div>

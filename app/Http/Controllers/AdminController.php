@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use DB;
@@ -171,7 +172,7 @@ class AdminController extends Controller
     public function admin_show()
     {
 
-        $admins=DB::table('users')->where('usertype','1')->orWhere('usertype','3')->get();
+         $admins = User::whereIn('usertype', ['1', '3'])->get();
 
 
         return view('admin.admins',compact('admins'));
@@ -964,7 +965,7 @@ class AdminController extends Controller
 
 
     
-        \Mail::to(Auth::user()->email)->send(new \App\Mail\UserAddedMail($details));
+        // \Mail::to(Auth::user()->email)->send(new \App\Mail\UserAddedMail($details));
 
         $delete=DB::table('users')->where('id',$id)->delete();
 
@@ -991,10 +992,10 @@ class AdminController extends Controller
     public function edit_admin($id)
     {
 
-        $admin=DB::table('users')->where('id',$id)->get();
+        // $admin=DB::table('users')->where('id',$id)->get();
+        $admin = User::where('id',$id)->get();
 
-
-        return view('admin.edit_admin',compact('admin'));
+        return view('admin.edit_admin',get_defined_vars());
 
 
     }
