@@ -1,7 +1,8 @@
 @extends('admin/adminlayout')
 
 @section('container')
-    <a href="/user-add" type="button" class="btn btn-success" style="width:170px;height:35px;padding-top:9px;">+ Add Customer</a>
+    <a href="/user-add" type="button" class="btn btn-success" style="width:170px;height:35px;padding-top:9px;">+ Add
+        Customer</a>
     <br>
     <br>
     <div class="row ">
@@ -33,6 +34,7 @@
                                     <th> Name </th>
                                     <th> Email </th>
                                     <th> Phone</th>
+                                    <th> Action</th>
 
 
 
@@ -42,26 +44,20 @@
 
                                 @foreach ($users as $user)
                                     <tr>
-
                                         <td>
-                                            <span>{{ $user->id }}</span>
+                                            <span>{{ $loop->iteration }}</span>
                                         </td>
                                         <td> {{ $user->name }} </td>
-
-
-
-
-
-
-
                                         <td> {{ $user->email }}</td>
-
-
                                         <td> {{ $user->phone }} </td>
-
-
-
-
+                                        <td>
+                                            @if (Auth::user()->usertype == '1')
+                                                <a href="{{ asset('/admin/edit/' . $user->id) }}"
+                                                    class="badge badge-outline-primary">Edit</a>
+                                                <a href="{{ asset('/admin/delete/' . $user->id) }}"
+                                                    class="badge badge-outline-danger" style="margin-left:10px;">Delete</a>
+                                            @endif
+                                        </td>
                                     </tr>
                                 @endforeach
 
