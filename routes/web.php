@@ -139,6 +139,8 @@ Route::get('/admin/reservation', [AdminController::class, 'reservation'])->name(
 Route::get('/admin/coupon', [AdminController::class, 'coupon_show'])->name('/admin/coupon');
 Route::get('/admin/show', [AdminController::class, 'admin_show'])->name('/admin/show');
 Route::get('/customer', [AdminController::class, 'user_show'])->name('/customer');
+Route::get('/user-add', [AdminController::class, 'user_add'])->name('/user-add');
+Route::post('/user-add-process', [AdminController::class, 'user_add_process'])->name('/user-add-process');
 Route::get('/admin/charge', [AdminController::class, 'charge'])->name('/admin/charge');
 Route::get('/admin/banner/all', [AdminController::class, 'banner'])->name('/admin/banner/all');
 Route::get('/admin/customize', [AdminController::class, 'customize'])->name('/admin/cutomize');

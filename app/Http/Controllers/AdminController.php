@@ -189,6 +189,100 @@ class AdminController extends Controller
 
 
     }
+    public function user_add(){
+        return view('admin.add_user');
+    }
+    public function user_add_process(Request $req){
+        $email=DB::table('users')->where('email',$req->email)->count();
+
+
+        if($email > 0)
+        {
+
+            session()->flash('wrong','Email already registered !');
+            return back();
+
+
+        }
+
+        $phone=DB::table('users')->where('phone',$req->phone)->count();
+
+
+        if($phone > 0)
+        {
+
+            session()->flash('wrong','Phone already registered !');
+            return back();
+
+
+        }
+        if(strlen($req->password)<8)
+        {
+
+            session()->flash('wrong','Password lenght at least 8 words!');
+            return back();
+
+
+
+        }
+
+        if($req->password!=$req->confirm_password)
+        {
+
+            
+            session()->flash('wrong','Password do not match !');
+            return back();
+
+
+        }
+
+        $this->validate(request(),[
+
+            'image'=>'mimes:jpeg,jpg,png',
+        ]);
+     
+     
+        $uploadedfile=$req->file('image');
+        $new_image=rand().'.'.$uploadedfile->getClientOriginalExtension();
+        $uploadedfile->move(public_path('/assets/images/admin/'),$new_image);
+
+        $data=array();
+        $data['name']=$req->name;
+        $data['email']=$req->email;
+        $data['phone']=$req->phone;
+        $data['usertype']=$req->type;
+        $data['profile_photo_path']=$new_image;
+        $data['password']=Hash::make($req->password);
+
+
+        if($req->type=='0')
+        {
+
+
+            $usertype="Customer";
+
+
+        }
+   
+
+
+        $insert=DB::table('users')->Insert($data);
+
+
+        $details = [
+            'title' => 'Mail from RMS Admin',
+            'body' => 'Congrats ! You are selected as a '.$usertype.' of RMS by RMS Admin Panel. Your Email ID - '.$req->email. ' & Password - '.$req->password,
+        ];
+
+
+    
+        \Mail::to($req->email)->send(new \App\Mail\UserAddedMail($details));
+
+
+        session()->flash('success','User added successfully !');
+        return back();
+
+    }
 
     public function charge()
     {
