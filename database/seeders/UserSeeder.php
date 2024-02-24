@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     public function run()
     {
           // Truncate the users table to remove existing data
-          User::truncate();
+          // User::truncate();
         User::create([
           'name' => 'Admin',
           'email' => 'admin@example.com',
