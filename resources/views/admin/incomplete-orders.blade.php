@@ -71,17 +71,17 @@
                             @endphp
 
 
-                            {{  $user->name }}
+                            {{  $user->name ?? ''}}
 
 
 
                             </td>
 
 
-                            <td>  {{  $user->phone }}</td>
-                            <td> {{ $order->shipping_address }} </td>
+                            <td>  {{  $user->phone ?? ''}}</td>
+                            <td> {{ $order->shipping_address ?? ''}} </td>
                      
-                            <td> {{ $order->pay_method }} </td>
+                            <td> {{ $order->pay_method ?? ''}} </td>
 
                             <td>
 
